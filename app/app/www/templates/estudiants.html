@@ -1,0 +1,39 @@
+<ion-view title="Estudiants" id="page2">
+  <ion-content padding="true" class="has-header">
+    <div class="row header">
+      <div class="col">Nom</div>
+      <div class="col">Direcció</div>
+      <div class="col">Tlf casa</div>
+      <div class="col">Tlf feina</div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row" ng-repeat="estudiant in estudiants">
+      <div class="col">{{estudiant.nom}}</div>
+      <div class="col">{{estudiant.direccio}}</div>
+      <div class="col">{{estudiant.telefons.casa}}</div>
+      <div class="col">{{estudiant.telefons.feina}}</div>
+      <div class="col"><button class="button" ng-click="deleteEstudiant(estudiant._id)">X</button></div>
+      <div class="col"><a class="button" href = "/#/side-menu21/page4/{{estudiant._id}}">Modificar</a></div>
+    </div>
+    <form id="estudiants-form2" class="list">
+      <label class="item item-input" id="estudiants-input4">
+        <span class="input-label">Nom</span>
+        <input type="text" ng-model="newEstudiant.nom" placeholder="">
+      </label>
+      <label class="item item-input" id="estudiants-input5">
+        <span class="input-label">Direcció</span>
+        <input type="text" ng-model="newEstudiant.direccio" placeholder="">
+      </label>
+      <label class="item item-input" id="estudiants-input6">
+        <span class="input-label">Teléfon casa</span>
+        <input type="text" ng-model="newEstudiant.telefons.casa" placeholder="">
+      </label>
+      <label class="item item-input" id="estudiants-input7">
+        <span class="input-label">Teléfon feina</span>
+        <input type="text" ng-model="newEstudiant.telefons.feina" placeholder="">
+      </label>
+    </form>
+    <button id="estudiants-button2" class="button button-positive  button-block" ng-click="registrarPersona()" >Registrar</button>
+  </ion-content>
+</ion-view>

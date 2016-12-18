@@ -1,0 +1,23 @@
+<ion-view title="ModificarEstudiant" id="page4">
+  <ion-content padding="true" class="has-header">
+    <form id="estudiants-form2" class="list">
+      <label class="item item-input" id="estudiants-input4">
+        <span class="input-label">Nom</span>
+        <input type="text" ng-model="modEstudiant.nom" placeholder="">
+      </label>
+      <label class="item item-input" id="estudiants-input5">
+        <span class="input-label">Direcció</span>
+        <input type="text" ng-model="modEstudiant.direccio" placeholder="">
+      </label>
+      <label class="item item-input" id="estudiants-input6">
+        <span class="input-label">Teléfon casa</span>
+        <input type="text" ng-model="modEstudiant.telefons.casa" placeholder="">
+      </label>
+      <label class="item item-input" id="estudiants-input7">
+        <span class="input-label">Teléfon feina</span>
+        <input type="text" ng-model="modEstudiant.telefons.feina" placeholder="">
+      </label>
+    </form>
+    <button id="estudiants-button2" class="button button-positive  button-block" ng-click="modificarPersona()" >Registrar</button>
+  </ion-content>
+</ion-view>

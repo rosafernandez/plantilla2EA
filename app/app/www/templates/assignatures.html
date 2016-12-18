@@ -1,0 +1,50 @@
+<ion-view title="Assignatures" id="page3">
+  <ion-content padding="true" class="has-header">
+    <div class="row header">
+      <div class="col"><b>Assignatures</b></div>
+      <div class="col"><b>Periode</b></div>
+      <div class="col">Eliminar</div>
+    </div>
+    <div class="row" ng-repeat="assignatura in assignatures">
+      <div class="col" ng-click="selectAssignatura(assignatura)">{{assignatura.nom}}</div>
+      <div class="col">{{assignatura.periode}}</div>
+      <div class="col"><button class="button" ng-click="deleteAssignatura(assignatura._id)">X</button></div>
+    </div>
+    <form id="estudiants-form2" class="list">
+      <label class="item item-input" id="estudiants-input4">
+        <span class="input-label">Nom</span>
+        <input type="text" ng-model="newAssignatura.nom" placeholder="">
+      </label>
+      <label class="item item-input" id="estudiants-input5">
+        <span class="input-label">Periode</span>
+        <input type="text" ng-model="newAssignatura.periode" placeholder="">
+      </label>
+    </form>
+    <button id="estudiants-button2" style="background-color: #5cb85c" class="button button-positive  button-block" ng-click="addAssignatura()" >Registrar</button>
+    <button id="estudiants-button2" class="button button-positive  button-block" ui-sref="menu.filtr" >Filtrar</button>
+
+    <div class="row header">
+    <div class="col"><b>Alumnes inscrits en {{selectedAssignatura.nom}} (per veure'ls fes click sobre l'assignatura)</b></div>
+  </div>
+    <div class="row" ng-repeat="estudiant in selectedAssignatura.estudiants">
+      <div class="col" ng-click="selectEstudiant(estudiant)">{{estudiant}}</div>
+    </div>
+    <form id="estudiants-form2" class="list">
+      <label class="item item-input" id="estudiants-input4">
+        <span class="input-label">Afegir nom del estudiant</span>
+        <input type="text" ng-model="newEstudiant.estudiant" placeholder="">
+      </label>
+    </form>
+    <button id="estudiants-button2" style="background-color: #5cb85c" class="button button-positive  button-block" ng-click="addEstudiant()" >Afegir estudiant</button>
+
+    <div class="row header">
+      <div class="col"><b>Detalls del alumne</b></div>
+    </div>
+    <div class="row" >
+      <div class="col">Nom: {{ estudiants.nom }}<br>
+        Direcció: {{ estudiants.direccio }}<br>
+        Tlf. Casa: {{ estudiants.telefons.casa }}<br>
+        Tlf. Trabajo: {{ estudiants.telefons.feina }}</div>
+    </div>
+  </ion-content>
+</ion-view>
